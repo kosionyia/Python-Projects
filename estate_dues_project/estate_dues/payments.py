@@ -46,3 +46,39 @@ def get_member_payments(data, member_id):
             payments.append(payment)
 
     return payments
+
+
+def get_monthly_payment_total(data, member_id, month):
+    """Return the total amount a member has paid for a specific month."""
+
+    payments = get_member_payments(data, member_id)
+
+    total = 0
+
+    for payment in payments:
+        if payment["month"] == month:
+            total += payment["amount"]
+    return total
+
+
+def get_payment_status(data, member_id, month):
+    """Return the payment status for a member for a specific month."""
+
+    monthly_dues = data["settings"]["monthly_dues"]
+
+    paid = get_monthly_payment_total(data, member_id, month)
+
+    balance = monthly_dues - paid
+
+    if paid == 0:
+        status = "OWING"
+    elif paid < monthly_dues:
+        status = "INSTALLMENT"
+    else:
+        status = "UP TO DATE"
+
+    return {
+        "paid": paid,
+        "balance": max(balance, 0),
+        "status": status
+    }
