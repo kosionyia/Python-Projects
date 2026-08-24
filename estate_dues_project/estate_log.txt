@@ -1,0 +1,6 @@
+2026-08-24 22:15:08 - Registered member: John Doe
+2026-08-24 22:15:08 - Registered member: Mary Jane
+2026-08-24 22:16:41 - Registered member: John Doe
+2026-08-24 22:16:41 - Registered member: Mary Jane
+2026-08-24 22:16:41 - Another event
+2026-08-24 22:25:30 - Registered member: John (ID: 4)

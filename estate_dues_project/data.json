@@ -1,0 +1,28 @@
+{
+    "settings": {
+        "monthly_dues": 5000
+    },
+    "members": [
+        {
+            "id": 1,
+            "name": "Jane",
+            "phone": "0801234587"
+        },
+        {
+            "id": 2,
+            "name": "Mary",
+            "phone": "23456798754"
+        },
+        {
+            "id": 3,
+            "name": "Daniel",
+            "phone": "98778965409"
+        },
+        {
+            "id": 4,
+            "name": "John",
+            "phone": "45637283674"
+        }
+    ],
+    "payments": []
+}
