@@ -2,6 +2,7 @@ from estate_dues.storage import load_data, save_data
 from estate_dues import members
 
 
+
 data = load_data()
 
 while True:
