@@ -1,4 +1,4 @@
-import storage
+from . import storage
 
 def get_books():
     """ Return all the books in the library """
@@ -79,6 +79,3 @@ def get_borrowed_books():
     ]
 
 
-
-if __name__ == "__main__":
-    print(get_books())

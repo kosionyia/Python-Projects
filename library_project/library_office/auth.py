@@ -55,7 +55,7 @@ def authenticate():
         user = login(username, password)
 
         if user is not None:
-            print("200 — Sign in successful.")
+            print("\n200 — Sign in successful.")
             return user
 
         attempts += 1

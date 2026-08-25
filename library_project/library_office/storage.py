@@ -87,7 +87,9 @@ def load_data():
         return data
 
     except FileNotFoundError:
-        return DEFAULT_BOOKS.copy()
+        books =  DEFAULT_BOOKS.copy()
+        save_data(books)
+        return books
 
     except (json.JSONDecodeError, TypeError):
         print("The library ledger is corrupted. Starting with the default books.")
