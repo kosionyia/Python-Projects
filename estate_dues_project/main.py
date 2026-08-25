@@ -42,16 +42,18 @@ def main():
                     f"Name: {member['name']} | "
                     f"Phone: {member['phone']}"
                 )
-            else:
-                print("\nNo registered members yet.")
-                print("Select 1 to register a new member.")
+                if member is None:
+                    print("\nNo registered members yet.")
+                    print("Select 1 to register a new member.")
 
         elif choice =="3":
             try:
                 member_id = int(input("Enter member ID: "))
                 month = input("Enter month (e.g. August 2026): ")
-                amount = float(input("Enter amount paiid: "))
-
+                amount = float(input("Enter amount paid: "))
+            except ValueError:
+                print("\nPlease eneter a valid member ID and amount,")
+            else:
                 payment = payments.record_payment(
                     data, member_id, month, amount
                 )
@@ -64,14 +66,12 @@ def main():
                     member = members.get_member(data, member_id)
 
                     log_event(
-                        f"Payment recorded: {member['name']}"
+                        f"Payment recorded: {member['name']} | " 
                         f"paid ₦{amount:,.2f} for {month}"
                     )
 
                     print("\nPayment recorded successfully!")
 
-            except ValueError:
-                print("\nPlease eneter a valide member ID and amount,")
 
 
         elif choice == "4":
@@ -87,7 +87,7 @@ def main():
                 payment_history = payments.get_member_payments(
                     data, member_id
                 )
-                print(f"\nPayment history for {member['name']}:")
+                print(f"\nPayment history for {member['name']}:\n")
 
                 if not payment_history:
                     print("No payments found.")
