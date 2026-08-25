@@ -10,7 +10,7 @@ def main():
         if request.upper() == "QUIT":
             break
         request_parts = request.split()
-        
+
         if not request_parts:
             print("400 - I cannot read this slip.")
             continue
