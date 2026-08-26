@@ -91,8 +91,14 @@ def load_data():
         save_data(books)
         return books
 
-    except (json.JSONDecodeError, TypeError):
-        print("The library ledger is corrupted. Starting with the default books.")
+
+    except json.JSONDecodeError:
+        books = DEFAULT_BOOKS.copy()
+        save_data(books)
+        return books
+
+    except TypeError:
+        print("\nThe library ledger is corrupted. Starting with the default books.")
         return DEFAULT_BOOKS.copy()
     
 def save_data(books):
