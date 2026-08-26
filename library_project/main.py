@@ -27,7 +27,7 @@ def main():
     while True:
         request = input("\nEnter request: ").strip()
 
-        if request.upper() == "QUIT":
+        if request.upper() == "QUIT" or request.upper() == "LOGOUT":
             print("200 - Window closed.")
             break
 
